@@ -7,3 +7,5 @@ import ru.alishev.springcourse.models.Person;
 @Repository
 public interface PeopleRepository extends JpaRepository<Person, Integer> {
 }
+
+

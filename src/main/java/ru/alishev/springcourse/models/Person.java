@@ -1,6 +1,7 @@
 package ru.alishev.springcourse.models;
 
 import jakarta.persistence.*;
+import org.hibernate.mapping.List;
 
 
 import javax.validation.constraints.Email;
@@ -33,6 +34,10 @@ public class Person {
     @NotEmpty(message = "Email should not be empty")
     @Email
     private String email;
+
+
+    @OneToMany(mappedBy = "owner")
+    private List<Item> items;
     public Person() {
 
     }
