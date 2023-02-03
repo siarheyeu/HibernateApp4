@@ -8,8 +8,9 @@ import ru.alishev.springcourse.models.Person;
 import java.util.List;
 
 @Repository
-public interface ItemsRepository {
+public interface ItemsRepository extends JpaRepository<Item, Integer>{
     List<Item> findByItemName(String itemName);
 
+    //person.getItems()
     List<Item> findByOwner(Person owner);
 }

@@ -45,5 +45,10 @@ public class PeopleService {
     @Transactional
     public void delete(int id){
         peopleRepository.deleteById(id);
+
+
+        public void test(){
+            System.out.println("Testing here with debug. Inside Hibernate Transaction");
+        }
     }
 }
