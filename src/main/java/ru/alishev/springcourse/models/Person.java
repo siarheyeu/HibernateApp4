@@ -37,6 +37,9 @@ public class Person {
     @Email
     private String email;
 
+    @Enumerated(EnumType.ORDINAL)
+    private Mood mood;
+
     @Column(name = "date_of_birth")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy") // дд/мм/гггг
@@ -114,6 +117,14 @@ public class Person {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public Mood getMood() {
+        return mood;
+    }
+
+    public void setMood(Mood mood) {
+        this.mood = mood;
     }
 
     @Override
