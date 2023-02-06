@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.alishev.springcourse.dao.PersonDAO;
 import ru.alishev.springcourse.models.Person;
 import ru.alishev.springcourse.repositories.PeopleService;
 import ru.alishev.springcourse.services.ItemService;
@@ -21,6 +22,8 @@ public class PeopleController {
   private final PeopleService peopleService;
   private final ItemService itemService;
 
+  private final PersonDAO personDAO;
+
     @Autowired
     public PeopleController(PeopleService peopleService) {
 
@@ -30,7 +33,8 @@ public class PeopleController {
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("people", peopleService.findAll());
+       // model.addAttribute("people", peopleService.findAll());
+        personDAO.testNPlus1();
 
         itemService.findByItemName("Airpods");
         itemService.findByOwner(peopleService.findAll().get(0));
